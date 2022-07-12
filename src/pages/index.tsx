@@ -1,56 +1,31 @@
-import {
-  Link as ChakraLink,
-  Text,
-  Code,
-  List,
-  ListIcon,
-  ListItem,
-} from '@chakra-ui/react'
-import { CheckCircleIcon, LinkIcon } from '@chakra-ui/icons'
+import { Button, Text, Flex, Spacer, HStack } from '@chakra-ui/react'
 
 import { Hero } from '../components/Hero'
 import { Container } from '../components/Container'
 import { Main } from '../components/Main'
 import { DarkModeSwitch } from '../components/DarkModeSwitch'
-import { CTA } from '../components/CTA'
-import { Footer } from '../components/Footer'
+import { useState } from 'react'
 
-const Index = () => (
+const Index = () => {
+  const [count, setCount] = useState<number>(0);
+
+  return (
   <Container height="100vh">
-    <Hero />
+    <Hero title="calumvc" alignItems="start"/>
     <Main>
-      <Text color="text">
-        Example repository of <Code>Next.js</Code> + <Code>chakra-ui</Code> +{' '}
-        <Code>TypeScript</Code>.
-      </Text>
+      
+      <Text color="text" textAlign="center">{ count } </Text>
 
-      <List spacing={3} my={0} color="text">
-        <ListItem>
-          <ListIcon as={CheckCircleIcon} color="green.500" />
-          <ChakraLink
-            isExternal
-            href="https://chakra-ui.com"
-            flexGrow={1}
-            mr={2}
-          >
-            Chakra UI <LinkIcon />
-          </ChakraLink>
-        </ListItem>
-        <ListItem>
-          <ListIcon as={CheckCircleIcon} color="green.500" />
-          <ChakraLink isExternal href="https://nextjs.org" flexGrow={1} mr={2}>
-            Next.js <LinkIcon />
-          </ChakraLink>
-        </ListItem>
-      </List>
+      <HStack spacing={3} justifyContent="center">
+        <Button colorScheme={'purple'} variant="outline" w='18%' onClick={() => {setCount(count+1)}}>Add 1</Button>
+        <Button colorScheme={'purple'} variant="outline" w='18%' onClick={() => {setCount(count * 2)}}>Double it!</Button>          
+        <Button colorScheme={'purple'} variant="outline" w='18%' onClick={() => {setCount(0)}}>Poof!</Button>
+        <Button colorScheme={'purple'} variant="outline" w='18%' onClick={() => {setCount(count-1)}}>Goodbye 1</Button>
+      </HStack>
+      
     </Main>
-
-    <DarkModeSwitch />
-    <Footer>
-      <Text>Next ❤️ Chakra</Text>
-    </Footer>
-    <CTA />
   </Container>
-)
+  )
+};
 
 export default Index
