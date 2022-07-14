@@ -19,7 +19,7 @@ const theme = extendTheme({
         _dark: '#5D3FD3',
       },
       heroGradientStart: {
-        _dark: '#fbec8f',
+        _dark: '#5D3FD3',
       },
       heroGradientEnd: {
         _dark: '#F54040',
