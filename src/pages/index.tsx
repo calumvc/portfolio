@@ -35,7 +35,7 @@ const Index = () => {
             <Stat />
           </TabPanel>
         </TabPanels>
-        <Hero title="calumvc" alignItems="start" />
+        <Hero title="calumvc" alignItems="center" />
         <Main>
 
         {/* <Text color="text" textAlign="center">{count} </Text> */}

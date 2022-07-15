@@ -6,7 +6,7 @@ type HeroProps = { title?: string; } & FlexProps;
 export const Hero: FC<HeroProps> = ({ title = "hello" , ...props }) => (
   <Flex
     justifyContent="center"
-    alignItems="left"
+    alignItems="center"
     height="100vh"
     bgGradient="linear(to-l, heroGradientStart, heroGradientEnd)"
     bgClip="text"
